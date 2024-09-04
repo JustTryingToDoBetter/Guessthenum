@@ -1,5 +1,5 @@
 using System;
-
+using CrypticWizard.RandomWordGenerator;
 namespace GuessTheWord
 {
     class Program
@@ -8,8 +8,8 @@ namespace GuessTheWord
         {
             Console.WriteLine("Welcome to guess the word\n");
             Console.WriteLine("-----------------------\n");
-
-            string realWord = "hello";
+            WordGenerator realWordGenerator = new WordGenerator();
+            string realWord = realWordGenerator.GetWord();
             char[] guessedWord = new char[realWord.Length];
             for (int i = 0; i < guessedWord.Length; i++)
             {
